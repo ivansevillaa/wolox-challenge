@@ -1,16 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-
+import { AuthProvider } from './context/Auth';
+import App from './App';
 import './index.css';
-import image from './assets/img_woloxer.png';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello world!!</h1>
-      <img src={image} alt="" />
-    </div>
-  );
-};
-
-render(<App />, document.getElementById('root'));
+render(
+  <AuthProvider>
+    <App />
+  </AuthProvider>,
+  document.getElementById('root')
+);
