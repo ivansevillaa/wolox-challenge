@@ -10,6 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -17,6 +18,7 @@ module.exports = {
   devServer: {
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
