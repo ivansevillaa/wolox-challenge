@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 const AuthContext = createContext();
 
 const authInitialState = {
-  isAuthenticated: false,
+  isAuthenticated: Boolean(localStorage.getItem('token')),
+  token: localStorage.getItem('token') || null,
 };
 
 const authReducer = (state, action) => {
@@ -13,11 +14,13 @@ const authReducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
+        token: action.payload.token,
       };
     case 'LOGOUT':
       return {
         ...state,
         isAuthenticated: false,
+        token: null,
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

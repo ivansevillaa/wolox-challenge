@@ -8,6 +8,7 @@ const Navbar = () => {
   const history = useHistory();
 
   const logout = () => {
+    localStorage.removeItem('token');
     authDispatch({ type: 'LOGOUT' });
     history.push('/');
   };
