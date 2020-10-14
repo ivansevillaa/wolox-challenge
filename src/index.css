@@ -1,7 +1,32 @@
-body {
-  background-color: crimson;
+/*
+  For the styles I'll write them in the next order for mantain consistence:
+    
+    --> position
+    --> box model (layout, dimensions, margins, paddings)
+    --> font enhancements
+    --> box enhancements
+    --> others
+*/
+
+html {
+  box-sizing: border-box;
+
+  font-size: 62.5%;
 }
 
-h1 {
-  color: aliceblue;
+body {
+  margin: 0;
+
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  padding: 0 var(--spacing-25);
 }
