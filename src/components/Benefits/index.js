@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Benefits.css';
 
 const Benefits = ({ children }) => (
-  <section className="benefits container">
+  <section className="benefits container" id="benefits">
     <h3 className="benefits__title">
       Entre los beneficios que ofrecemos se encuentran{' '}
       <span className="benefits__title--blue">;&#41;</span>

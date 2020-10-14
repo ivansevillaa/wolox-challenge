@@ -19,10 +19,10 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar__list">
         <li className="navbar__item">
-          <Link to="/">Inicio</Link>
+          <a href="/#begin">Inicio</a>
         </li>
         <li className="navbar__item">
-          <Link to="/">Beneficios</Link>
+          <a href="/#benefits">Beneficios</a>
         </li>
         <li className="navbar__item">
           {isAuthenticated ? (
@@ -30,13 +30,14 @@ const Navbar = () => {
               variant="outline"
               color="white"
               disableShadow
+              size="sm"
               onClick={() => logout()}
             >
               Logout
             </Button>
           ) : (
             <Link to="/login">
-              <Button variant="outline" color="white" disableShadow>
+              <Button variant="outline" color="white" disableShadow size="sm">
                 Login
               </Button>
             </Link>

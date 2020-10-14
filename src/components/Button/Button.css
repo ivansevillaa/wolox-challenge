@@ -42,13 +42,19 @@
   background-color: var(--color-brand-primary);
 }
 
-.button--size-sm {
-  padding: var(--spacing-1) var(--spacing-6);
-  min-width: 14rem;
+.button--color-primary:hover {
+  filter: brightness(1.2);
 }
-.button--size-md {
+
+.button--size-sm {
   padding: var(--spacing-2) var(--spacing-8);
   min-width: 16rem;
+}
+.button--size-md {
+  padding: var(--spacing-3) var(--spacing-8);
+  min-width: 22rem;
+
+  font-size: var(--font-size-standard);
 }
 .button--size-lg {
   padding: var(--spacing-4) var(--spacing-10);

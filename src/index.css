@@ -27,6 +27,13 @@ body {
   box-sizing: inherit;
 }
 
+h1,
+h2,
+h3,
+p {
+  cursor: default;
+}
+
 .container {
-  padding: 0 var(--spacing-25);
+  padding: 0 var(--spacing-20);
 }

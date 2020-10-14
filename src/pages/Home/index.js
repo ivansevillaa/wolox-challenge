@@ -4,13 +4,14 @@ import Hero from '../../components/Hero';
 import About from '../../components/About';
 import Benefits from '../../components/Benefits';
 import Benefit from '../../components/Benefit';
+import Footer from '../../components/Footer';
 import './Home.css';
 import { benefitsData } from '../../utils/benefitsData';
 
 const Home = () => (
   <>
     <Header />
-    <main className="home__main-content">
+    <main className="home__main-content" id="begin">
       <Hero />
       <About />
       <Benefits>
@@ -25,6 +26,7 @@ const Home = () => (
         ))}
       </Benefits>
     </main>
+    <Footer />
   </>
 );
 
