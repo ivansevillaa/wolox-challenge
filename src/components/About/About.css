@@ -1,0 +1,78 @@
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  height: 40rem;
+
+  background: var(--color-gray);
+}
+
+.about-data,
+.about-slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.about-data {
+  flex: 1 0;
+  flex-direction: column;
+  padding-top: var(--spacing-18);
+
+  background-image: url('../../assets/img_woloxer.png');
+  background-image: -webkit-image-set(
+    url('../../assets/img_woloxer.png') 1x,
+    url('../../assets/img_woloxer@2x.png') 2x,
+    url('../../assets/img_woloxer@3x.png') 3x
+  );
+}
+
+.about-slogan {
+  flex: 0 0 46vw;
+  padding: 0 var(--spacing-25);
+
+  text-align: center;
+}
+
+.about__title {
+  margin: 0;
+
+  color: var(--color-dark);
+}
+
+.about-data .about__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.about-slogan .about__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+}
+
+.about-slogan .about__title--bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.about__title--green {
+  color: var(--color-brand-secondary);
+}
+
+.about__title--blue {
+  color: var(--color-brand-primary);
+}
+
+.social-media-info {
+  display: flex;
+  align-items: center;
+  margin-top: var(--spacing-16);
+  margin-bottom: var(--spacing-3);
+}
+
+.social-media-info__text {
+  margin-left: var(--spacing-4);
+
+  color: var(--color-light);
+  font-weight: var(--font-weight-medium);
+}

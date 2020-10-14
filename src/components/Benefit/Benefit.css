@@ -1,0 +1,11 @@
+.benefit {
+  max-width: 14rem;
+
+  text-align: center;
+}
+
+.benefit__name {
+  color: var(--color-dark);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
