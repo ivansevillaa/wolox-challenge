@@ -1,0 +1,26 @@
+input[type='submit'] {
+  height: 5rem;
+  width: 100%;
+
+  color: var(--color-light);
+  font-size: var(--font-size-md);
+
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-brand-secondary);
+  border: none;
+
+  cursor: pointer;
+  transition: 300ms ease;
+}
+
+input[type='submit']:hover {
+  filter: brightness(1.1);
+}
+
+input[type='submit']:active {
+  transform: scale(0.9);
+}
+
+.input-check-container {
+  margin-top: var(--spacing-9);
+}

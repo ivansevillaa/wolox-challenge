@@ -25,6 +25,7 @@
   --color-light: #fff;
   --color-gray: #f2f5fa;
   --color-dark: #1d263a;
+  --color-danger: #ff0000;
   --color-transparent: transparent;
 
   --font-family-primary: 'Montserrat', sans-serif;
@@ -53,6 +54,7 @@
   --spacing-6: 2rem;
   --spacing-7: 2.2rem;
   --spacing-8: 2.4rem;
+  --spacing-9: 2.6rem;
   --spacing-10: 2.8rem;
   --spacing-12: 3.2rem;
   --spacing-14: 4.4rem;

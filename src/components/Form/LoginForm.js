@@ -1,68 +1,81 @@
 import React, { useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAuthDispatch } from '../../context/Auth';
-import { useInput } from '../../hooks/useInput';
+import { useForm } from '../../hooks/useForm';
+import { validateLoginForm } from '../../utils/validateLoginForm';
+import { login } from '../../utils/serviceCall';
+import Input from '../Input';
+import './LoginForm.css';
 
 const LoginForm = () => {
-  const email = useInput('');
-  const password = useInput('');
-  const [keepConnected, setKeepConnected] = useState(false);
   const authDispatch = useAuthDispatch();
   const history = useHistory();
-  const location = useLocation();
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    handleLogin,
+    validateLoginForm
+  );
+  const [keepConnected, setKeepConnected] = useState(false);
+  const [loadingFetch, setLoadingFetch] = useState(false);
+  const [errorFetch, setErrorFetch] = useState('');
+  const [credentialError, setCredentialError] = useState();
 
-  const { from } = location.state || { from: { pathname: '/' } };
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  async function handleLogin() {
+    setErrorFetch('');
+    setLoadingFetch(true);
 
-    const requestUrl =
-      'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: {
-        email: email.value,
-        password: password.value,
-      },
-    };
-    const response = await fetch(requestUrl, requestOptions);
-    const result = await response.json();
-    if (keepConnected) {
-      localStorage.setItem('token', result.token);
+    try {
+      const response = await login(values);
+      const result = await response.json();
+
+      if (result.token) {
+        authDispatch({ type: 'LOGIN', payload: { token: result.token } });
+        if (keepConnected) localStorage.setItem('token', result.token);
+        history.replace('/tech-list');
+
+        setErrorFetch('');
+        setCredentialError('Usuario o contraseña no válidos.');
+        setLoadingFetch(false);
+      }
+    } catch (err) {
+      setLoadingFetch(false);
+      setErrorFetch(
+        'Algo ha salido mal, pero no fue tu culpa. Intentalo nuevamente más tarde.'
+      );
+      throw new Error(err);
     }
-    authDispatch({ type: 'LOGIN', payload: { token: result.token } });
+  }
 
-    history.replace(from);
-  };
+  if (loadingFetch) {
+    return <h1>Cargando...</h1>;
+  }
+
+  if (errorFetch) {
+    return <p>{errorFetch}</p>;
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">
-        <span>Enter your email address</span>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          autoComplete="email"
-          required
-          {...email}
-        />
-      </label>
-      <label htmlFor="password">
-        <span>Enter your password</span>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          autoComplete="password"
-          required
-          {...password}
-        />
-      </label>
-      <label htmlFor="keepConnected">
-        <span>Keep connected</span>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <Input
+        type="text"
+        id="email"
+        name="email"
+        label="Email"
+        onChange={handleChange}
+        value={values.email || ''}
+        error={errors.email}
+      />
+      <Input
+        type="password"
+        id="password"
+        name="password"
+        label="Contraseña"
+        onChange={handleChange}
+        value={values.password || ''}
+        error={errors.password}
+      />
+      <input type="submit" value="Login" />
+      <p className="error-message">{credentialError && credentialError}</p>
+      <div className="input-check-container">
         <input
           type="checkbox"
           id="keepConnected"
@@ -70,8 +83,10 @@ const LoginForm = () => {
           checked={keepConnected}
           onChange={() => setKeepConnected(!keepConnected)}
         />
-      </label>
-      <input type="submit" value="Log In" />
+        <label htmlFor="keepConnected">
+          <span>Mantenerse conectado</span>
+        </label>
+      </div>
     </form>
   );
 };

@@ -37,3 +37,8 @@ p {
 .container {
   padding: 0 var(--spacing-20);
 }
+
+.error-message {
+  color: var(--color-danger);
+  text-align: center;
+}

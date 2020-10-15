@@ -1,0 +1,85 @@
+.input-container {
+  position: relative;
+
+  height: 5rem;
+  margin-bottom: var(--spacing-9);
+
+  overflow: hidden;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding-top: var(--spacing-6);
+
+  color: var(--color-dark);
+
+  border-color: var(--color-transparent);
+  outline: none;
+}
+
+.label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  border-bottom: 1px solid var(--color-dark);
+
+  pointer-events: none;
+}
+
+.label--error {
+  border-color: var(--color-danger);
+}
+
+.label--error span {
+  color: var(--color-danger);
+}
+
+.label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  height: 100%;
+  width: 100%;
+
+  border-bottom: 3px solid var(--color-brand-primary);
+
+  transform: translateX(-100%);
+  transition: transform 300ms ease;
+}
+
+.label--error::after {
+  border-color: var(--color-danger);
+}
+
+.label span {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+
+  transition: all 300ms ease;
+}
+
+.input:focus + .label span,
+.input:not(:placeholder-shown) + .label span {
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-sm);
+
+  transform: translateY(-150%);
+}
+
+.input:focus + .label::after,
+.input:not(:placeholder-shown) + .label::after {
+  transform: translateX(0);
+}
+
+.input--error:focus + .label span,
+.input--error:not(:placeholder-shown) + .label span {
+  color: var(--color-danger);
+}

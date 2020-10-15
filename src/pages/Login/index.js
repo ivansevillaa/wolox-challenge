@@ -1,8 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useAuthState } from '../../context/Auth';
-import Nav from '../../components/Navbar/index';
 import { LoginForm } from '../../components/Form/index';
+import './Login.css';
 
 const Login = () => {
   const { isAuthenticated } = useAuthState();
@@ -12,10 +12,11 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <Nav />
-      <h3>Login</h3>
-      <LoginForm />
+    <div className="login-page container">
+      <main className="login-section">
+        <h2 className="login__title">Login</h2>
+        <LoginForm />
+      </main>
     </div>
   );
 };

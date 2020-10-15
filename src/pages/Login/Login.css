@@ -1,0 +1,29 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background-image: url('../../assets/Backgrounds/Bg_Header.png');
+  background-image: -webkit-image-set(
+    url('../../assets/Backgrounds/Bg_Header.png') 1x,
+    url('../../assets/Backgrounds/Bg_Header@2x.png') 2x,
+    url('../../assets/Backgrounds/Bg_Header@3x.png') 3x
+  );
+}
+
+.login-section {
+  width: 45rem;
+  padding: var(--spacing-16);
+
+  border-radius: var(--border-radius-md);
+}
+
+.login__title {
+  margin: 0;
+  margin-bottom: var(--spacing-10);
+
+  color: var(--color-brand-primary);
+  font-size: var(--font-size-lg);
+}
