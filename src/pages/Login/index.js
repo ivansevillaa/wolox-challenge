@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useAuthState } from '../../context/Auth';
 import { LoginForm } from '../../components/Form/index';
+import Header from '../../components/Header/index';
 import './Login.css';
 
 const Login = () => {
@@ -12,12 +13,15 @@ const Login = () => {
   }
 
   return (
-    <div className="login-page container">
-      <main className="login-section">
-        <h2 className="login__title">Login</h2>
-        <LoginForm />
+    <>
+      <Header />
+      <main className="login-section container">
+        <div className="login">
+          <h2 className="login__title">Login</h2>
+          <LoginForm />
+        </div>
       </main>
-    </div>
+    </>
   );
 };
 

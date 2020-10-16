@@ -10,7 +10,7 @@ import { benefitsData } from '../../utils/benefitsData';
 
 const Home = () => (
   <>
-    <Header />
+    <Header withNavbar />
     <main className="home__main-content" id="begin">
       <Hero />
       <About />

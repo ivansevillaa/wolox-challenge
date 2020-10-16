@@ -1,6 +1,7 @@
 .tech-list-wrapper {
   max-width: 106rem;
   margin: 0 auto;
+  padding-top: var(--spacing-25);
 
   background-image: url('../../assets/Backgrounds/Bg_Header.png');
   background-image: -webkit-image-set(
