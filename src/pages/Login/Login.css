@@ -14,8 +14,8 @@
 }
 
 .login-section {
-  width: 45rem;
-  padding: var(--spacing-16);
+  width: 100%;
+  max-width: 45rem;
 
   border-radius: var(--border-radius-md);
 }

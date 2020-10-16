@@ -7,7 +7,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-top: var(--spacing-16);
 
   background-color: var(--color-transparent);
+}
+
+.header > a {
+  width: 100%;
+
+  text-align: center;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .header.container {
+    flex-wrap: nowrap;
+  }
+
+  .header > a {
+    width: auto;
+  }
 }

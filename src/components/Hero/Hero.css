@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: var(--spacing-30);
-  padding-right: var(--spacing-35);
+  padding-top: var(--spacing-40);
   padding-bottom: var(--spacing-20);
 
   background-image: url('../../assets/Backgrounds/Bg_Header.png');
@@ -16,9 +15,6 @@
 }
 
 .hero__title {
-  display: flex;
-  flex-direction: column;
-
   color: var(--color-dark);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-normal);
@@ -31,4 +27,16 @@
 
 .hero__title--green {
   color: var(--color-brand-secondary);
+}
+
+@media only screen and (min-width: 47.9em) {
+  .hero.container {
+    padding-top: var(--spacing-30);
+    padding-right: var(--spacing-35);
+  }
+
+  .hero__title {
+    display: flex;
+    flex-direction: column;
+  }
 }

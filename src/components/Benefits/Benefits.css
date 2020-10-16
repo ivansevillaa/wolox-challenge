@@ -18,7 +18,7 @@
 
 .benefits-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -30,4 +30,10 @@
 
   border-bottom: 3px solid var(--color-gray);
   box-shadow: 0 0px 10px 5px #f5f5f5;
+}
+
+@media only screen and (min-width: 63.9em) {
+  .benefits-list {
+    justify-content: space-between;
+  }
 }

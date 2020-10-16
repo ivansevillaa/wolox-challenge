@@ -23,7 +23,7 @@ const TechList = () => {
         type="text"
         square
         shadow
-        label="Filtrar por nombre o tipo de tecnología, por ejemplo: mobile"
+        label="Filtrar por nombre o tipo de tecnología"
         onChange={(event) => setSearchTechs(event.target.value)}
       />
       <select

@@ -32,7 +32,8 @@
 .tech-list {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: center;
 }
 
 .tech-list__dropdown {

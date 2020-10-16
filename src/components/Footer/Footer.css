@@ -6,6 +6,8 @@
   padding-bottom: var(--spacing-12);
   height: var(--spacing-60);
 
+  text-align: center;
+
   background-image: url('../../assets/Backgrounds/Bg_Footer.png');
   background-image: -webkit-image-set(
     url('../../assets/Backgrounds/Bg_Footer.png') 1x,
