@@ -1,5 +1,7 @@
 const API_BASE = 'http://private-8e8921-woloxfrontendinverview.apiary-mock.com';
 const API_LOGIN = `${API_BASE}/login`;
+const API_TECHS = `${API_BASE}/techs`;
+import { useFetchData } from '../hooks/useFetchData';
 
 export const login = (values) => {
   const requestOptions = {
@@ -14,4 +16,10 @@ export const login = (values) => {
   };
 
   return fetch(API_LOGIN, requestOptions);
+};
+
+export const getTechList = () => {
+  const [state] = useFetchData(API_TECHS);
+
+  return state;
 };
