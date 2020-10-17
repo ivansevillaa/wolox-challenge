@@ -1,7 +1,7 @@
 .button {
   color: var(--color-light);
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
 
   border-radius: var(--border-radius-full);
@@ -54,7 +54,7 @@
   padding: var(--spacing-3) var(--spacing-8);
   min-width: 22rem;
 
-  font-size: var(--font-size-standard);
+  font-size: var(--font-size-sm);
 }
 .button--size-lg {
   padding: var(--spacing-4) var(--spacing-10);

@@ -27,11 +27,3 @@ export const useForm = (callback, validate) => {
 
   return { values, errors, handleChange, handleSubmit };
 };
-
-// export const useInput = (initialValue) => {
-//   const [value, setValue] = useState(initialValue);
-
-//   const onChange = (event) => setValue(event.target.value);
-
-//   return { value, onChange };
-// };

@@ -86,7 +86,7 @@
 .input:focus + .label span,
 .input:not(:placeholder-shown) + .label span {
   color: var(--color-brand-primary);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 
   transform: translateY(-150%);
 }
