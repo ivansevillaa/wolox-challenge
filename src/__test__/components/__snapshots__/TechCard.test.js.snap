@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TechCard TechCard snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="tech-card"
+  >
+    <img
+      alt="Node logo"
+      class="tech-card__image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/220px-Node.js_logo.svg.png"
+    />
+    <div
+      class="tech-card__details"
+    >
+      <h3>
+        Node
+      </h3>
+      <p>
+        <span>
+          Language:
+        </span>
+         JavaScript
+      </p>
+      <p>
+        <span>
+          Year:
+        </span>
+         2009
+      </p>
+      <p>
+        <span>
+          License:
+        </span>
+         MIT
+      </p>
+      <p>
+        <span>
+          Author:
+        </span>
+         Ryan Dahl
+      </p>
+      <p>
+        <span>
+          Type:
+        </span>
+         Back-End
+      </p>
+    </div>
+  </article>
+</DocumentFragment>
+`;
