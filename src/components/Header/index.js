@@ -6,7 +6,7 @@ import Navbar from '../Navbar/index';
 import './Header.css';
 
 const Header = ({ withNavbar }) => (
-  <header className="header container">
+  <header className="header container fadeInDown">
     <Link to="/">
       <Icon icon="iconWoloxFullColor" width={175} />
     </Link>

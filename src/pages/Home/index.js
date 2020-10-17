@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       <Header withNavbar />
-      <main className="home__main-content" id="begin">
+      <main className="home__main-content fadeInUp" id="begin">
         <Hero />
         <About />
         <Benefits>

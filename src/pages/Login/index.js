@@ -15,7 +15,7 @@ const Login = () => {
   return (
     <>
       <Header />
-      <main className="login-section container">
+      <main className="login-section container fadeIn">
         <div className="login">
           <h2 className="login__title">Login</h2>
           <LoginForm />

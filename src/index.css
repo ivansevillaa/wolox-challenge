@@ -43,6 +43,55 @@ p {
   text-align: center;
 }
 
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @media only screen and (min-width: 47.9em) {
   .container {
     padding: 0 var(--spacing-20);

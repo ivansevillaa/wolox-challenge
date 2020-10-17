@@ -5,6 +5,7 @@ import { useForm } from '../../hooks/useForm';
 import { validateLoginForm } from '../../utils/validateLoginForm';
 import { login } from '../../utils/serviceCall';
 import Input from '../Input';
+import Spinner from '../Spinner';
 import './LoginForm.css';
 
 const LoginForm = () => {
@@ -46,7 +47,7 @@ const LoginForm = () => {
   }
 
   if (loadingFetch) {
-    return <h1>Cargando...</h1>;
+    return <Spinner />;
   }
 
   if (errorFetch) {

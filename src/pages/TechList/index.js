@@ -4,6 +4,7 @@ import { filterTechs, sortTechs } from '../../utils/techListUtils';
 import Input from '../../components/Input';
 import TechCard from '../../components/TechCard';
 import Header from '../../components/Header';
+import Spinner from '../../components/Spinner';
 import './TechList.css';
 
 const TechList = () => {
@@ -12,7 +13,7 @@ const TechList = () => {
 
   const { data: techs, isLoading, error } = getTechList();
   if (error) return <h1>{error.message}</h1>;
-  if (isLoading) return <h1>Cargando...</h1>;
+  if (isLoading) return <Spinner />;
 
   const filteredTechs = filterTechs(techs, searchTechs);
   const sortedTechs = sortTechs(typeSort, filteredTechs);
@@ -20,7 +21,7 @@ const TechList = () => {
   return (
     <>
       <Header />
-      <main className="tech-list-wrapper container">
+      <main className="tech-list-wrapper container fadeIn">
         <h3 className="tech-list-wrapper__title">Listado de Tecnologías</h3>
         <Input
           type="text"
