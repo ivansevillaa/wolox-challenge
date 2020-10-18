@@ -1,4 +1,5 @@
-const API_BASE = 'http://private-8e8921-woloxfrontendinverview.apiary-mock.com';
+const API_BASE =
+  'https://private-8e8921-woloxfrontendinverview.apiary-mock.com';
 const API_LOGIN = `${API_BASE}/login`;
 const API_TECHS = `${API_BASE}/techs`;
 import { useFetchData } from '../hooks/useFetchData';
